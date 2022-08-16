@@ -1,4 +1,5 @@
 import { Invoice } from "./model/Invoices.js";
+import { ListTemplate } from "./model/list-container.js";
 import { Payment } from "./model/Payments.js";
 window.onload = function () {
     const title = document.querySelector("#title");
@@ -7,9 +8,10 @@ window.onload = function () {
     const paymentType = document.querySelector("#payment-type");
     const amount = document.querySelector("#amount");
     const createdAt = document.querySelector("#created-at");
+    const ulContainer = document.querySelector("#list-container");
+    const list = new ListTemplate(ulContainer);
     btnAdd.addEventListener("click", function (event) {
         event.preventDefault();
-        console.log("Payment type : ", paymentType.value);
         let doc;
         if (paymentType.value === "payment") {
             doc = new Payment(title.value, Number(amount.value), new Date(createdAt.value));
@@ -17,6 +19,6 @@ window.onload = function () {
         else {
             doc = new Invoice(title.value, Number(amount.value), new Date(createdAt.value));
         }
-        console.log(doc);
+        list.render(paymentType.value, doc);
     });
 };

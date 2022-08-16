@@ -1,5 +1,6 @@
 import { HasFormatter } from "./model/hasFormatter.interface"
 import { Invoice } from "./model/Invoices.js"
+import { ListTemplate } from "./model/list-container.js"
 import { Payment } from "./model/Payments.js"
 
 window.onload = function () {
@@ -9,16 +10,17 @@ window.onload = function () {
     const paymentType = document.querySelector("#payment-type") as HTMLSelectElement
     const amount = document.querySelector("#amount") as HTMLInputElement
     const createdAt = document.querySelector("#created-at") as HTMLInputElement
+    const ulContainer = document.querySelector("#list-container") as HTMLUListElement;
+    const list = new ListTemplate(ulContainer);
 
     btnAdd.addEventListener("click", function (event: Event) {
         event.preventDefault();
-        console.log("Payment type : ", paymentType.value);
         let doc: HasFormatter;
         if (paymentType.value === "payment") {
             doc = new Payment(title.value, Number(amount.value), new Date(createdAt.value))
         } else {
             doc = new Invoice(title.value, Number(amount.value), new Date(createdAt.value))
         }
-        console.log(doc)
+        list.render(paymentType.value, doc)
     })
 }
