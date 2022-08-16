@@ -1,10 +1,10 @@
 type ResourceType = { resourceName: string }
 
-interface Resource<T extends { resourceName: string }> {
+interface Resource<T extends ResourceType> {
     myResources: T
 }
 
-let resourceTwo: Resource<{ resourceName: string, resourceId: number }> = {
+let resourceTwo: Resource<{ resourceId: number } & ResourceType> = {
     myResources: {
         resourceName: "",
         resourceId: 0
