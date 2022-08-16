@@ -1,15 +1,53 @@
-interface Human {
-    name: string;
-    eat(): string;
-}
+class Course {
+    static numOfCourses = 0;
+    private _courseName: string;
 
-class User implements Human {
-    name: string = "";
-    eat(): string {
-        throw new Error("Method not implemented.");
+    get courseName() {
+        return this._courseName;
     }
 
+    set courseName(value: string) {
+        if (value.indexOf('@') >= 0) {
+            this._courseName = value;
+        }
+    }
+
+    constructor(private courseId: number) {
+        Course.numOfCourses += 1;
+        this._courseName = '';
+    }
+    getCourseId() {
+        return this.courseId;
+    }
 }
+
+let react = new Course(101);
+react.courseName = "React for Beginners"
+console.log("COURSE NAME : ", react.courseName);          // ?
+
+// let react = new Course(101)
+// console.log(Course.numOfCourses);
+// let angular = new Course(102)
+// console.log(Course.numOfCourses);
+// let node = new Course(103)
+// console.log(Course.numOfCourses);
+
+
+
+
+
+// interface Human {
+//     name: string;
+//     eat(): string;
+// }
+
+// class User implements Human {
+//     name: string = "";
+//     eat(): string {
+//         throw new Error("Method not implemented.");
+//     }
+
+// }
 
 
 

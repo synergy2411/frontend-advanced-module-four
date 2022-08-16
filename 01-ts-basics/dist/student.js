@@ -1,12 +1,42 @@
 "use strict";
-class User {
-    constructor() {
-        this.name = "";
+class Course {
+    constructor(courseId) {
+        this.courseId = courseId;
+        Course.numOfCourses += 1;
+        this._courseName = '';
     }
-    eat() {
-        throw new Error("Method not implemented.");
+    get courseName() {
+        return this._courseName;
+    }
+    set courseName(value) {
+        if (value.indexOf('@') >= 0) {
+            this._courseName = value;
+        }
+    }
+    getCourseId() {
+        return this.courseId;
     }
 }
+Course.numOfCourses = 0;
+let react = new Course(101);
+react.courseName = "React for Beginners";
+console.log("COURSE NAME : ", react.courseName); // ?
+// let react = new Course(101)
+// console.log(Course.numOfCourses);
+// let angular = new Course(102)
+// console.log(Course.numOfCourses);
+// let node = new Course(103)
+// console.log(Course.numOfCourses);
+// interface Human {
+//     name: string;
+//     eat(): string;
+// }
+// class User implements Human {
+//     name: string = "";
+//     eat(): string {
+//         throw new Error("Method not implemented.");
+//     }
+// }
 // abstract class Human {
 //     abstract sleep(): string;
 //     eat() { console.log("Human can eat") }
