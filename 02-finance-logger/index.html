@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance App</title>
+  </head>
+  <body>
+    <h1>My Finance Log</h1>
+    <form>
+      <label for="payment-type">Payment Type : </label>
+      <select name="payment-type" id="payment-type">
+        <option value="payment">Payment</option>
+        <option value="invoice">Invoice</option>
+      </select>
+      <br />
+      <label for="title">Title : </label>
+      <input type="text" name="title" id="title" />
+      <br />
+      <label for="amount">Amount:</label>
+      <input type="number" name="amount" id="amount" />
+      <br />
+      <label for="created-at">Created At:</label>
+      <input type="date" name="created-at" id="created-at" />
+      <br />
+      <button type="submit" id="btn-add">Add</button>
+      <button type="reset" id="btn-reset">Reset</button>
+    </form>
+    <script src="./dist/main.js" type="module"></script>
+  </body>
+</html>
