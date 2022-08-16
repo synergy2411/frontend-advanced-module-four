@@ -1,5 +1,5 @@
-import { Invoice } from "./model/Invoices";
-import { Payment } from "./model/Payments";
+import { Invoice } from "./model/Invoices.js";
+import { Payment } from "./model/Payments.js";
 window.onload = function () {
     const title = document.querySelector("#title");
     const btnAdd = document.querySelector("#btn-add");
