@@ -19,12 +19,12 @@ export class UsersComponent {
     avatar: "https://randomuser.me/api/portraits/men/1.jpg"
   }
 
-  onMoreInfo(lastName: string, company: string) {
-    alert(`Mr. ${lastName} is working with ${company}!`)
+  onMoreInfo(user: any) {
+    alert(`Mr. ${user.lastName} is working with ${user.company}!`)
   }
 
-  changeVotes(event: any) {
-    this.user.votes = Number(event.target.value);
+  changeVotes(event: Event) {
+    this.user.votes = Number((event.target as HTMLInputElement).value);
   }
 
 }
