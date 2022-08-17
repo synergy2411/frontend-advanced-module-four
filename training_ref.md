@@ -16,3 +16,7 @@ index.html -> script src ="./dist/main.js" -> open it with live server
 src/main.ts
 
 > npm run start (http://localhost:4200)
+
+> npm i bootstrap
+> change in angular.json -> build -> style -> ./node_modules/bootstrap/dist/css/bootstrap.min.css
+> restart the server -> ng serve | npm start

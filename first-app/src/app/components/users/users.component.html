@@ -1,1 +1,10 @@
-<h2>Users Component Loaded successfully...</h2>
+<h2>{{ title }}</h2>
+
+<ul>
+  <li>
+    <img [src]="user.avatar" alt="" />
+    <h3>{{ user.firstName + " " + user.lastName }}</h3>
+    <p>Date of Birth : <span [innerText]="user.dob"></span></p>
+    <p>Income : <span [innerText]="user.income"></span></p>
+  </li>
+</ul>
