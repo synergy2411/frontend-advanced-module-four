@@ -14,3 +14,5 @@
 index.html -> script src ="./dist/main.js" -> open it with live server
 
 src/main.ts
+
+> npm run start (http://localhost:4200)
