@@ -13,23 +13,25 @@ function Expenses() {
         { id: "e004", title: "grocery", amount: 99.9, createdAt: new Date("Jul 02, 2022") },
     ]
 
-    const onToggle = () => {
-        setShowForm(!showForm);
-    }
+    const onToggle = () => setShowForm(!showForm);
 
     return (
         <div>
             <br />
             <div className="row">
                 <div className="col-4 offset-4 text-center">
-                    <button onClick={onToggle} className="btn btn-primary btn-large">
-                        Show/Hide
-                    </button>
+                    <div className="d-grid">
+                        <button onClick={onToggle} className="btn btn-dark btn-block">
+                            {showForm ? 'Hide' : 'Show'}
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            {showForm ? <AddExpense /> : null}
-
+            {/* {showForm ? <AddExpense /> : null} */}
+            <br />
+            {showForm && <AddExpense />}
+            <br />
             <div className="row">
                 <ExpenseItem expense={expenses[0]} />
                 <ExpenseItem expense={expenses[1]} />
