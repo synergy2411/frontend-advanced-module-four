@@ -1,14 +1,25 @@
 import { useState } from "react";
+import { v4 } from 'uuid';
 
-const AddExpense = () => {
+const AddExpense = (props) => {
 
-    const [enteredTitle, setEnteredTitle] = useState('anything');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredCreatedAt, setEnteredCreatedAt] = useState('');
 
     const titleChangeHandler = event => setEnteredTitle(event.target.value);
+    const amountChangeHandler = event => setEnteredAmount(event.target.value);
+    const createdAtChangeHandler = event => setEnteredCreatedAt(event.target.value);
 
     const submitHandler = event => {
         event.preventDefault();
-        console.log("Title : ", enteredTitle)
+        let newExpense = {
+            title: enteredTitle,
+            amount: Number(enteredAmount),
+            createdAt: new Date(enteredCreatedAt),
+            id: v4()
+        }
+        props.onAddExpense(newExpense);
     }
     return (
         <div className="row">
@@ -27,7 +38,19 @@ const AddExpense = () => {
                                 id="title"
                             />
                             {/* amount */}
+                            <label htmlFor="amount">Amount :</label>
+                            <input type="number"
+                                value={enteredAmount}
+                                onChange={amountChangeHandler}
+                                min="0.1" step="0.1"
+                                className="form-control" />
                             {/* created-at */}
+                            <label htmlFor="createdAt"> Created At :</label>
+                            <input type="date"
+                                value={enteredCreatedAt}
+                                onChange={createdAtChangeHandler}
+                                className="form-control" id="createdAt" />
+                            <br />
                             {/* buttons */}
                             <div className="d-grid">
                                 <button className="btn btn-dark" type="submit"> Add Expense </button>
