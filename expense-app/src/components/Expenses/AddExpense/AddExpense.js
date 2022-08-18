@@ -19,7 +19,8 @@ const AddExpense = (props) => {
             createdAt: new Date(enteredCreatedAt),
             id: v4()
         }
-        props.onAddExpense(newExpense);
+        props.addExp(newExpense);
+        props.onToggle();
     }
     return (
         <div className="row">

@@ -25,6 +25,8 @@ function Expenses() {
         })
     }
 
+    const onDeleteExpense = id => setExpenses(prevExpenses => prevExpenses.filter(exp => exp.id !== id))
+
     return (
         <div>
             <br />
@@ -40,10 +42,10 @@ function Expenses() {
 
             {/* {showForm ? <AddExpense /> : null} */}
             <br />
-            {showForm && <AddExpense onAddExpense={onAddExpense} />}
+            {showForm && <AddExpense onToggle={onToggle} addExp={onAddExpense} />}
             <br />
             <div className="row">
-                {expenses.map(exp => <ExpenseItem expense={exp} key={exp.id} />)}
+                {expenses.map(exp => <ExpenseItem onDeleteExpense={onDeleteExpense} expense={exp} key={exp.id} />)}
             </div>
         </div>
     )
