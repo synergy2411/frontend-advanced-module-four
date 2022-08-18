@@ -43,10 +43,7 @@ function Expenses() {
             {showForm && <AddExpense onAddExpense={onAddExpense} />}
             <br />
             <div className="row">
-                <ExpenseItem expense={expenses[0]} />
-                <ExpenseItem expense={expenses[1]} />
-                <ExpenseItem expense={expenses[2]} />
-                <ExpenseItem expense={expenses[3]} />
+                {expenses.map(exp => <ExpenseItem expense={exp} key={exp.id} />)}
             </div>
         </div>
     )
