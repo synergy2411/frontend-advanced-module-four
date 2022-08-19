@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddExpense from "./AddExpense/AddExpense";
+import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 
 
@@ -37,6 +38,9 @@ function Expenses() {
                             {showForm ? 'Hide' : 'Show'}
                         </button>
                     </div>
+                </div>
+                <div className="col-4">
+                    <ExpenseFilter />
                 </div>
             </div>
 
