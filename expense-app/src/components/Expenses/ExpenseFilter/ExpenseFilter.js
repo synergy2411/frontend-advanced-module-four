@@ -2,33 +2,33 @@ import React from 'react';
 
 class ExpenseFilter extends React.Component {
 
-    constructor() {
-        super();
-        console.log("CONSTRUCTOR");
+    constructor(props) {
+        super(props);
+        // console.log("CONSTRUCTOR");
         this.state = {
             selectedYear: '2019'
         }
-
-        // const [state, setState] = useState('2019')
     }
 
-    componentDidMount() {
-        console.log("COMP DID MOUNT");
-    }
-    componentDidUpdate() {
-        console.log("COMP DID UPDATE");
-    }
-    componentWillUnmount() {
-        console.log("COMP WILL UNMOUNT");
-    }
+    // componentDidMount() {
+    //     console.log("COMP DID MOUNT");
+    // }
+    // componentDidUpdate() {
+    //     console.log("COMP DID UPDATE");
+    // }
+    // componentWillUnmount() {
+    //     console.log("COMP WILL UNMOUNT");
+    // }
 
     selectedYearChangeHandler = (event) => {
         this.setState({
             selectedYear: event.target.value
         })
+        // this.props.onSelectedYear(this.state.selectedYear)
+        this.props.onSelectedYear(event.target.value)
     }
     render() {
-        console.log("RENDER");
+        // console.log("RENDER");
         return (
             <select className='form-control'
                 value={this.state.selectedYear}

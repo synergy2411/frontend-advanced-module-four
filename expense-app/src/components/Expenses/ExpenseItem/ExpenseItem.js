@@ -14,7 +14,7 @@ const ExpenseItem = (props) => {
                         <p>Amount : ${props.expense.amount}</p>
                         <p>Created At : <ExpenseDate createdAt={props.expense.createdAt} /></p>
                         <div className="d-grid">
-                            <button className="btn btn-danger btn-block" onClick={onDelete}>DELETE</button>
+                            <button className="btn btn-danger btn-sm btn-block" onClick={onDelete}>DELETE</button>
                         </div>
                     </div>
                 </div>
