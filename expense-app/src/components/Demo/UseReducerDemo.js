@@ -19,11 +19,19 @@ function reducer(state, action) {
             counter: state.counter + action.value
         }
     } else if (action.type === "SUBTRACT_COUNTER") {
-        return { ...state, counter: state.counter - action.value }
-    } else if (action.type === "STORE_RESULT") {
         return {
             ...state,
+            counter: state.counter - action.value
+        }
+    } else if (action.type === "STORE_RESULT") {
+        return {
+            ...state,               // {counter , result}
             result: [state.counter, ...state.result]
+        }
+    } else if (action.type === "DELETE_RESULT") {
+        return {
+            ...state,
+            result: state.result.filter((r, i) => i !== action.index)
         }
     } else {
         return state;
@@ -33,7 +41,7 @@ function reducer(state, action) {
 const UseReducerDemo = () => {
 
     const [stateVar, dispatch] = useReducer(reducer, { counter: 0, result: [] })
-
+    console.log(stateVar)
     return (
         <div>
             <h2>Counter : {stateVar.counter}</h2>
@@ -49,10 +57,26 @@ const UseReducerDemo = () => {
             <button className='btn btn-warning'
                 onClick={() => dispatch({ type: "STORE_RESULT" })}>STORE</button>
             <ul>
-                {stateVar.result.map(r => <li key={r}>{r}</li>)}
+                {stateVar.result.map((r, i) => <li key={r}
+                    onClick={() => dispatch({ type: "DELETE_RESULT", index: i })}
+                >{r}</li>)}
             </ul>
         </div>
     );
 }
 
 export default UseReducerDemo;
+
+
+
+// let userOne = {
+//     email : "foo@123",
+//     age : 32
+// }
+
+// let userTwo = {
+//     ...userOne,
+//     age : 40
+// }
+
+// console.log(userTwo);           // {email : "foo@123", age :40}
