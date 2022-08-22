@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import AuthContext from "../../context/auth-context";
+import Login from "../Auth/Login/Login";
+import Expenses from "../Expenses/Expenses";
+
 const UseContextDemo = () => {
+    const context = useContext(AuthContext);
     return (
-        <div>
-            <h3>Use Context Demo</h3>
+        <div className="container">
+            <Login />
+            {context.isLoggedIn && <Expenses />}
         </div>
     );
 }

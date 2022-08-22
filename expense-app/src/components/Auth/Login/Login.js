@@ -1,6 +1,9 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
+import AuthContext from '../../../context/auth-context';
 
-const Login = () => {
+const Login = (props) => {
+
+    const context = useContext(AuthContext);
 
     const inputEmailRef = useRef();
 
@@ -27,6 +30,7 @@ const Login = () => {
         event.preventDefault();
         console.log("Email : ", inputEmailRef.current.value)
         console.log("Password : ", password);
+        context.onLogin();
     }
 
     const passwordBlurHandler = () => {
@@ -59,8 +63,7 @@ const Login = () => {
                 onFocus={passwordFocusHandler} />
             {passwordValidity && <p>Password is adatory field.</p>}
             <br />
-            {formValidity ? 'true' : 'false'}
-            <button type="submit" disabled={formValidity}>Login</button>
+            <button type="submit">Login</button>
         </form>
     )
 }

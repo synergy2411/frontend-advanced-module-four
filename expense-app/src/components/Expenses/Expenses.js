@@ -33,7 +33,7 @@ function Expenses() {
     const filteredExpenses = expenses.filter(expense => expense.createdAt.getFullYear().toString() === selectedYear)
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn: false }}>
+        <>
             <br />
             <div className="row">
                 <div className="col-4 offset-4 text-center">
@@ -55,7 +55,7 @@ function Expenses() {
             <div className="row">
                 {filteredExpenses.map(exp => <ExpenseItem onDeleteExpense={onDeleteExpense} expense={exp} key={exp.id} />)}
             </div>
-        </AuthContext.Provider>
+        </>
     )
 }
 
