@@ -7,8 +7,9 @@ const UseContextDemo = () => {
     const context = useContext(AuthContext);
     return (
         <div className="container">
-            <Login />
+            {!context.isLoggedIn && <Login />}
             {context.isLoggedIn && <Expenses />}
+            {context.isLoggedIn && <button onClick={() => context.onLogout()}> Logout </button>}
         </div>
     );
 }

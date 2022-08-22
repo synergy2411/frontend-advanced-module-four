@@ -14,8 +14,10 @@ function App() {
     setIsLoggedIn(true);
   }
 
+  const onLogout = () => setIsLoggedIn(false);
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin }}>
+    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin, onLogout: onLogout }}>
       <UseContextDemo />
     </AuthContext.Provider>
   );
