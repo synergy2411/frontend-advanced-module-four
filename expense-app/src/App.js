@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Login from "./components/Auth/Login/Login";
 import UseContextDemo from "./components/Demo/UseContextDemo";
 import UseEffectDemo from "./components/Demo/UseEffectDemo";
+import UseReducerDemo from "./components/Demo/UseReducerDemo";
 import Expenses from "./components/Expenses/Expenses";
 import AuthContext from "./context/auth-context";
 
@@ -17,9 +18,11 @@ function App() {
   const onLogout = () => setIsLoggedIn(false);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin, onLogout: onLogout }}>
-      <UseContextDemo />
-    </AuthContext.Provider>
+    <UseReducerDemo />
+
+    // <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin, onLogout: onLogout }}>
+    //   <UseContextDemo />
+    // </AuthContext.Provider>
   );
 }
 
