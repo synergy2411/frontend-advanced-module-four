@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import Login from "./components/Auth/Login/Login";
+import DemoParent from "./components/Demo/DemoParent";
 import UseContextDemo from "./components/Demo/UseContextDemo";
 import UseEffectDemo from "./components/Demo/UseEffectDemo";
 import UseReducerDemo from "./components/Demo/UseReducerDemo";
@@ -18,7 +19,8 @@ function App() {
   const onLogout = () => setIsLoggedIn(false);
 
   return (
-    <UseReducerDemo />
+    <DemoParent />
+    // <UseReducerDemo />
 
     // <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin, onLogout: onLogout }}>
     //   <UseContextDemo />
