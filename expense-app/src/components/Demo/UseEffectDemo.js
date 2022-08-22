@@ -7,11 +7,15 @@ const UseEffectDemo = () => {
 
 
     const [search, setSearch] = useState('');
+    const [repos, setRepos] = useState([])
 
     useEffect(() => {
         let notifier = setTimeout(() => {
             axios.get(`https://api.github.com/users/${search}/repos`)
-                .then(response => console.log(response.data))
+                .then(response => {
+                    console.log(response.data)
+                    setRepos(response.data.map(repo => repo.name))
+                })
                 .catch(console.log)
         }, 1000)
         return () => {
@@ -32,6 +36,9 @@ const UseEffectDemo = () => {
     return (
         <div>
             <input type="text" value={search} onChange={(event) => setSearch(event.target.value)} />
+            <ul>
+                {repos.map(r => <li key={r}>{r}</li>)}
+            </ul>
             {/* <button onClick={() => setToggle(!toggle)}>Toggle</button>
             {toggle && <p>Use effect demo - TOGGLE</p>}
             <button onClick={() => setShow(!show)}>Show</button>
