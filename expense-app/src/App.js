@@ -6,10 +6,10 @@ import Expenses from "./components/Expenses/Expenses";
 function App() {
   return (
     <div className="container">
-      <UseEffectDemo />
+      {/* <UseEffectDemo /> */}
       {/* <Login /> */}
-      {/* <p className="display-4 text-center">Awesome Expense App</p>
-      <Expenses /> */}
+      <p className="display-4 text-center">Awesome Expense App</p>
+      <Expenses />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddExpense from "./AddExpense/AddExpense";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
-
+import AuthContext from '../../context/auth-context';
 
 let INTIAL_EXPENSES = [
     { id: "e001", title: "Shopping", amount: 12.9, createdAt: new Date("Dec 21, 2019") },
@@ -33,7 +33,7 @@ function Expenses() {
     const filteredExpenses = expenses.filter(expense => expense.createdAt.getFullYear().toString() === selectedYear)
 
     return (
-        <div>
+        <AuthContext.Provider value={{ isLoggedIn: false }}>
             <br />
             <div className="row">
                 <div className="col-4 offset-4 text-center">
@@ -55,7 +55,7 @@ function Expenses() {
             <div className="row">
                 {filteredExpenses.map(exp => <ExpenseItem onDeleteExpense={onDeleteExpense} expense={exp} key={exp.id} />)}
             </div>
-        </div>
+        </AuthContext.Provider>
     )
 }
 
