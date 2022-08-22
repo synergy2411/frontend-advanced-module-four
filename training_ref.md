@@ -28,3 +28,10 @@ src/main.ts
 > ng g p .....
 > ng g m .....
 > ng g s .....
+
+# useEffect Flavours
+
+- useEffect(() =>{}) : every re-rendering of component
+- useEffect(() => {}, []) / componentDidMount : only for the intial rendering
+- useEffect(() => {}, [dep1, dep2]) | componentDidUpdate : everytime whenever one of the dependency changes
+- useEffect(() => () => {}, [dep1]) | componentWillUnmount : fires everytime whenever the dependency changes, just before the callback, clean-up fn will fire except for intial rendering
