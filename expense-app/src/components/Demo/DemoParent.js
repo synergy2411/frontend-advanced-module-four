@@ -6,8 +6,8 @@ const DemoParent = () => {
     const [toggle, setToggle] = useState(false)
     console.log("PARENT")
 
-    // const changeValue = useCallback(() => console.log("CHANGING VALUES"), [])
-    const changeValue = useMemo(() => () => console.log("CHANGING VALUES"), [])
+    const changeValue = useCallback(() => console.log("CHANGING VALUES"), [])
+    // const changeValue = useMemo(() => () => console.log("CHANGING VALUES"), [])
 
     const numbers = useMemo(() => [1, 2, 3, 4, 5], []);
 

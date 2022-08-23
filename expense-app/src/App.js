@@ -1,11 +1,8 @@
-import React, { useContext, useState } from "react";
-import Login from "./components/Auth/Login/Login";
-import DemoParent from "./components/Demo/DemoParent";
-import UseContextDemo from "./components/Demo/UseContextDemo";
-import UseEffectDemo from "./components/Demo/UseEffectDemo";
-import UseReducerDemo from "./components/Demo/UseReducerDemo";
+import React, { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
+
 import Expenses from "./components/Expenses/Expenses";
-import AuthContext from "./context/auth-context";
+import Courses from "./pages/Courses/Courses";
 
 function App() {
   // const context = useContext(AuthContext);
@@ -19,7 +16,14 @@ function App() {
   const onLogout = () => setIsLoggedIn(false);
 
   return (
-    <DemoParent />
+    <div className="container">
+      <p>App Works</p>
+      <Routes>
+        <Route path="/expenses" element={<Expenses />} />          {/* http://localhost:3000/expenses */}
+        <Route path="/courses/*" element={<Courses />} />
+      </Routes>
+    </div>
+    // <DemoParent />
     // <UseReducerDemo />
 
     // <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, onLogin: onLogin, onLogout: onLogout }}>
