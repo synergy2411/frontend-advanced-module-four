@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "u001",
+      "name": "john doe",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": "u002",
+      "name": "Alice doe",
+      "avatar": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "id": "u003",
+      "name": "Jenny doe",
+      "avatar": "https://randomuser.me/api/portraits/women/1.jpg"
+    }
+  ],
+  "posts": [
+    { "id": "p001", "title": "Awesome Post", "author": "u001" },
+    { "id": "p002", "title": "Great Post", "author": "u002" },
+    { "id": "p003", "title": "I luv this Post", "author": "u001" },
+    { "id": "p004", "title": "Not so great", "author": "u003" }
+  ]
+}
