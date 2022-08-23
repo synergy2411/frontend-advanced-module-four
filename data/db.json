@@ -13,13 +13,39 @@
     {
       "id": "u003",
       "name": "Jenny doe",
-      "avatar": "https://randomuser.me/api/portraits/lego/1.jpg"
+      "avatar": "https://randomuser.me/api/portraits/lego/3.jpg"
+    },
+    {
+      "name": "Alice Doe",
+      "avatar": "https://randomuser.me/api/portraits/lego/9.jpg",
+      "id": "go8CedC"
+    },
+    {
+      "name": "sumit khandelwal",
+      "avatar": "https://randomuser.me/api/portraits/lego/4.jpg",
+      "id": "mcGwVEJ"
     }
   ],
   "posts": [
-    { "id": "p001", "title": "Awesome Post", "author": "u001" },
-    { "id": "p002", "title": "Great Post", "author": "u002" },
-    { "id": "p003", "title": "I luv this Post", "author": "u001" },
-    { "id": "p004", "title": "Not so great", "author": "u003" }
+    {
+      "id": "p001",
+      "title": "Awesome Post",
+      "author": "u001"
+    },
+    {
+      "id": "p002",
+      "title": "Great Post",
+      "author": "u002"
+    },
+    {
+      "id": "p003",
+      "title": "I luv this Post",
+      "author": "u001"
+    },
+    {
+      "id": "p004",
+      "title": "Not so great",
+      "author": "u003"
+    }
   ]
 }
