@@ -24,6 +24,11 @@
       "name": "sumit khandelwal",
       "avatar": "https://randomuser.me/api/portraits/lego/4.jpg",
       "id": "mcGwVEJ"
+    },
+    {
+      "name": "James Bond",
+      "avatar": "https://randomuser.me/api/portraits/lego/9.jpg",
+      "id": "A27SjKb"
     }
   ],
   "posts": [
@@ -46,6 +51,21 @@
       "id": "p004",
       "title": "Not so great",
       "author": "u003"
+    },
+    {
+      "title": "React for beginners",
+      "author": "u002",
+      "id": "A5WercV"
+    },
+    {
+      "title": "React for Advanced",
+      "author": "u002",
+      "id": "1IAx8AU"
+    },
+    {
+      "title": "Learning Angular",
+      "author": "u002",
+      "id": "Jez6JGU"
     }
   ]
 }

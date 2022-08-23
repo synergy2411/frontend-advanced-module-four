@@ -1,0 +1,18 @@
+.backdrop {
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 50%;
+  width: 100vw;
+  height: 100vh;
+}
+.post-form {
+  left: 25vw;
+  top: 20vh;
+  background-color: #fff;
+  position: fixed;
+  z-index: 70%;
+  width: 50vw;
+  height: 50vh;
+}
