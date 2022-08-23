@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import Courses from "./pages/Courses/Courses";
 import AddUser from "./pages/Lego/AddUser/AddUser";
 import ListUsers from "./pages/Lego/ListUsers/ListUsers";
+import User from "./pages/Lego/User/User";
 
 function App() {
   // const context = useContext(AuthContext);
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/list-users" element={<ListUsers />} />
         <Route path="/add-user" element={<AddUser />} />
+        <Route path="/user/:userId" element={<User />} />
       </Routes>
 
 
