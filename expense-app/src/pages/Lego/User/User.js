@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Routes, useNavigate, useParams, Route } from 'react-router-dom';
-import AddPost from '../AddPost/AddPost';
+import { useNavigate, useParams } from 'react-router-dom';
+import { BounceLoader } from 'react-spinners';
+
+import classes from "./User.module.css";
 
 const User = () => {
 
@@ -9,14 +11,18 @@ const User = () => {
     const navigate = useNavigate()
 
     const { userId } = params;
+
     const [posts, setPosts] = useState([])
     const [user, setUser] = useState();
+    const [isItemDeleted, setIsItemDeleted] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:3030/users?id=" + userId)
-            .then(response => {
-                setUser(response.data[0])
-            }).catch(console.error)
+        setTimeout(() => {
+            axios.get("http://localhost:3030/users?id=" + userId)
+                .then(response => {
+                    setUser(response.data[0])
+                }).catch(console.error)
+        }, 3000)
     }, [userId])
 
     useEffect(() => {
@@ -24,9 +30,16 @@ const User = () => {
             .then(response => {
                 setPosts(response.data)
             }).catch(console.error)
-    }, [userId])
+    }, [userId, isItemDeleted])
 
     const onAddPost = () => navigate(`/user/${userId}/posts/add-new`)
+
+    const onDeletePost = (postId) => {
+        axios.delete(`http://localhost:3030/posts/${postId}`)
+            .then(response => {
+                setIsItemDeleted(!isItemDeleted)
+            }).catch(console.error)
+    }
 
     if (user) {
         return (
@@ -38,7 +51,8 @@ const User = () => {
                                 <img src={user.avatar} alt={user.name} className="img-fluid rounded-circle" />
                             </div>
                             <div className='card-body'>
-                                <h2 className='text-center'>{user.name.toUpperCase()}</h2>
+                                <h2 className={`text-center ${classes['my-border']}`}>
+                                    {user.name.toUpperCase()}</h2>
                             </div>
                         </div>
                     </div>
@@ -48,10 +62,18 @@ const User = () => {
                                 <h4 className='text-center'>My Post(s) -</h4>
                             </div>
                             <div className='card-body text-center'>
-                                <button className='btn btn-dark btn-block btn-sm' onClick={onAddPost}>Add Post</button>
+                                <button className='btn btn-dark btn-block btn-sm' onClick={onAddPost}>
+                                    Create New Post</button>
                                 <br />
                                 <br />
-                                {posts.length > 0 ? <ul className='list-group'> {posts.map(p => <li className='list-group-item' key={p.id}>{p.title}</li>)}</ul> : <p>No Post Found.</p>}
+                                {posts.length > 0 ?
+                                    <ul className='list-group'> {
+                                        posts.map(p => <li
+                                            onDoubleClick={() => onDeletePost(p.id)}
+                                            className={`list-group-item ${classes['clickable']}`}
+                                            key={p.id}>{p.title}</li>)
+                                    }</ul> :
+                                    <p>No Post Found.</p>}
                                 <br />
                                 <p className='alert alert-danger'>*Double click to delete the post</p>
                             </div>
@@ -62,7 +84,7 @@ const User = () => {
             </>
         );
     } else {
-        return <p>Loading user...</p>
+        return <BounceLoader />
     }
 }
 

@@ -33,19 +33,9 @@
   ],
   "posts": [
     {
-      "id": "p001",
-      "title": "Awesome Post",
-      "author": "u001"
-    },
-    {
       "id": "p002",
       "title": "Great Post",
       "author": "u002"
-    },
-    {
-      "id": "p003",
-      "title": "I luv this Post",
-      "author": "u001"
     },
     {
       "id": "p004",
@@ -66,6 +56,16 @@
       "title": "Learning Angular",
       "author": "u002",
       "id": "Jez6JGU"
+    },
+    {
+      "title": "post 1",
+      "author": "u001",
+      "id": "onZsyYn"
+    },
+    {
+      "title": "post 2",
+      "author": "u001",
+      "id": "ShMbNLq"
     }
   ]
 }

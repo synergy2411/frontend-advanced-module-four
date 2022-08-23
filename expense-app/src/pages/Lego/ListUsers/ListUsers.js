@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import UserItem from './UserItem/UserItem';
+import { BarLoader } from 'react-spinners';
 
 const ListUsers = () => {
 
@@ -23,7 +24,7 @@ const ListUsers = () => {
             </>
         );
     } else {
-        return <p>Loading users ...</p>
+        return <BarLoader />
     }
 }
 
