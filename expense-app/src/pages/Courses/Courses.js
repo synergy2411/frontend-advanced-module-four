@@ -8,19 +8,19 @@ const Courses = () => {
             <h3>Select your favorate course to learn</h3>
             <ul>
                 <li>
-                    <Link to="angular">Angular</Link>
+                    <Link to="angular/100">Angular</Link>
                 </li>
                 <li>
-                    <Link to="react">React</Link>
+                    <Link to="react/80">React</Link>
                 </li>
                 <li>
-                    <Link to="vue">Vue</Link>
+                    <Link to="vue/60">Vue</Link>
                 </li>
             </ul>
 
             <hr />
             <Routes>
-                <Route path=":courseName" element={<CourseItem />} />
+                <Route path=":courseName/:courseDuration" element={<CourseItem />} />
             </Routes>
         </div>
     );
