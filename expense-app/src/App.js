@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import Expenses from "./components/Expenses/Expenses";
+import Header from "./components/Header/Header";
 import Courses from "./pages/Courses/Courses";
+import AddUser from "./pages/Lego/AddUser/AddUser";
+import ListUsers from "./pages/Lego/ListUsers/ListUsers";
 
 function App() {
   // const context = useContext(AuthContext);
@@ -17,11 +20,19 @@ function App() {
 
   return (
     <div className="container">
-      <p>App Works</p>
+      <Header />
+      <br />
       <Routes>
-        <Route path="/expenses" element={<Expenses />} />          {/* http://localhost:3000/expenses */}
-        <Route path="/courses/*" element={<Courses />} />
+        <Route path="/list-users" element={<ListUsers />} />
+        <Route path="/add-user" element={<AddUser />} />
       </Routes>
+
+
+      {/* <p>App Works</p>
+      <Routes>
+        <Route path="/expenses" element={<Expenses />} />         
+        <Route path="/courses/*" element={<Courses />} />
+      </Routes> */}
     </div>
     // <DemoParent />
     // <UseReducerDemo />
@@ -33,3 +44,7 @@ function App() {
 }
 
 export default App;
+
+
+
+// /data> json-server db.json --watch --port=3030
