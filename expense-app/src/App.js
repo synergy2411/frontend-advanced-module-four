@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Counter from "./components/Counter/Counter";
 
 import Expenses from "./components/Expenses/Expenses";
 import Header from "./components/Header/Header";
@@ -25,6 +26,8 @@ function App() {
       <Header />
       <br />
       <Routes>
+        <Route path="/" element={<Navigate to="/counter" />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="/list-users" element={<ListUsers />} />
         <Route path="/add-user" element={<AddUser />} />
         <Route path="/user/:userId" element={<User />} />

@@ -3,7 +3,8 @@ const redux = require("redux");
 
 
 const initialState = {
-    counter: 0
+    counter: 0,
+    result: []
 }
 
 // Reducer
