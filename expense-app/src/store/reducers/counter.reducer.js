@@ -1,11 +1,10 @@
 import * as fromAction from '../actions';
 
 const initialState = {
-    counter: 0,
-    result: []
+    counter: 0
 }
 
-function rootReducer(state = initialState, action) {
+function counterReducer(state = initialState, action) {
     switch (action.type) {
         case fromAction.INCREMENT:
             return {
@@ -27,19 +26,9 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 counter: state.counter - action.value
             }
-        case fromAction.STORE_RESULT:
-            return {
-                ...state,
-                result: [action.value, ...state.result]
-            }
-        case fromAction.DELETE_RESULT:
-            return {
-                ...state,
-                result: state.result.filter((r, i) => i !== action.value)
-            }
         default:
             return state;
     }
 }
 
-export default rootReducer;
+export default counterReducer;

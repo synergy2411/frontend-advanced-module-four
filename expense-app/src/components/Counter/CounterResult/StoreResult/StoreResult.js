@@ -4,7 +4,7 @@ import * as fromActions from '../../../../store/actions';
 
 const StoreResult = () => {
     const dispatch = useDispatch();
-    const counter = useSelector(store => store.counter)
+    const counter = useSelector(store => store.ctr.counter)
     return (
         <div className='text-center'>
             <button className='btn btn-lg btn-danger'

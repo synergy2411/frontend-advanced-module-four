@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux'
 
 
 const CounterOutput = () => {
-    const counter = useSelector((store) => store.counter)
+    const counter = useSelector((store) => {
+        console.log("STATE : ", store);
+        return store.ctr.counter
+    })
 
     return (
         <div className='text-center'>
