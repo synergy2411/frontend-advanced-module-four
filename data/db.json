@@ -33,29 +33,14 @@
   ],
   "posts": [
     {
-      "id": "p002",
-      "title": "Great Post",
-      "author": "u002"
-    },
-    {
       "id": "p004",
       "title": "Not so great",
       "author": "u003"
     },
     {
-      "title": "React for beginners",
-      "author": "u002",
-      "id": "A5WercV"
-    },
-    {
       "title": "React for Advanced",
       "author": "u002",
       "id": "1IAx8AU"
-    },
-    {
-      "title": "Learning Angular",
-      "author": "u002",
-      "id": "Jez6JGU"
     },
     {
       "title": "post 1",
