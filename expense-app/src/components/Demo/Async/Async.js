@@ -15,7 +15,8 @@ const Async = () => {
     return (
         <div>
             <ul>
-                {comments.map(comment => <li key={comment.id}>{comment.name}</li>)}
+                {comments.map(comment => <li key={comment.id}>
+                    {comment.name}</li>)}
             </ul>
         </div>
     );
