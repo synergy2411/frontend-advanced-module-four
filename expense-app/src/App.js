@@ -11,6 +11,7 @@ import User from "./pages/Lego/User/User";
 
 import CompA from './components/Hoc/CompA';
 import CompB from "./components/Hoc/CompB";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   // const context = useContext(AuthContext);
@@ -26,8 +27,10 @@ function App() {
   return (
     <div className="container">
       {/* <Async /> */}
-      <CompA />
-      <CompB />
+      <ErrorBoundary >
+        <CompA />
+        <CompB />
+      </ErrorBoundary>
       <Header />
       <br />
       <Routes>
