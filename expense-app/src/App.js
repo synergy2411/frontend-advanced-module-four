@@ -9,6 +9,9 @@ import AddUser from "./pages/Lego/AddUser/AddUser";
 import ListUsers from "./pages/Lego/ListUsers/ListUsers";
 import User from "./pages/Lego/User/User";
 
+import CompA from './components/Hoc/CompA';
+import CompB from "./components/Hoc/CompB";
+
 function App() {
   // const context = useContext(AuthContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -23,6 +26,8 @@ function App() {
   return (
     <div className="container">
       {/* <Async /> */}
+      <CompA />
+      <CompB />
       <Header />
       <br />
       <Routes>
