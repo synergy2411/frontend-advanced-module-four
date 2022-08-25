@@ -11,6 +11,7 @@ const ExpenseItem = (props) => {
                 <div className="card-body">
                     <h4 className="card-title text-center">
                         {props.title}</h4>
+                    {/* {props.children} */}
                     <div className="card-text">
                         <p>Amount : ${props.amount}</p>
                         <p>Created At : <ExpenseDate createdAt={props.createdAt} /></p>

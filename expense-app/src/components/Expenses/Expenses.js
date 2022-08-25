@@ -2,7 +2,6 @@ import { useState } from "react";
 import AddExpense from "./AddExpense/AddExpense";
 import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
-import AuthContext from '../../context/auth-context';
 
 let INTIAL_EXPENSES = [
     { id: "e001", title: "Shopping", amount: 12.9, createdAt: new Date("Dec 21, 2019") },
@@ -58,8 +57,8 @@ function Expenses() {
                     key={exp.id}
                     amount={exp.amount}
                     id={exp.id}
-                    title={1234}
-                    createdAt={exp.createdAt} />)}
+                    title={exp.title}
+                    createdAt={exp.createdAt}> <h3>Supplied by Parent</h3> </ExpenseItem>)}
             </div>
         </>
     )
