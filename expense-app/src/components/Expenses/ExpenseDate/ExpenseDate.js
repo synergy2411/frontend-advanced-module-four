@@ -11,7 +11,8 @@ const ExpenseDate = props => {
     const year = props.createdAt.getFullYear()
 
     return (
-        <>{ctx.isLoggedIn && <span>{month} {day}, {year}</span>}</>
+        <span>{month} {day}, {year}</span>
+        // <>{ctx.isLoggedIn && <span>{month} {day}, {year}</span>}</>
         // <AuthContext.Consumer>
         //     {(ctx) => {
         //         console.log("CONTEXT : ", ctx)

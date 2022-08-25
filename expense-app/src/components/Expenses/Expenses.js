@@ -53,7 +53,13 @@ function Expenses() {
             {showForm && <AddExpense onToggle={onToggle} addExp={onAddExpense} />}
             <br />
             <div className="row">
-                {filteredExpenses.map(exp => <ExpenseItem onDeleteExpense={onDeleteExpense} expense={exp} key={exp.id} />)}
+                {filteredExpenses.map(exp => <ExpenseItem
+                    onDeleteExpense={onDeleteExpense}
+                    key={exp.id}
+                    amount={exp.amount}
+                    id={exp.id}
+                    title={1234}
+                    createdAt={exp.createdAt} />)}
             </div>
         </>
     )

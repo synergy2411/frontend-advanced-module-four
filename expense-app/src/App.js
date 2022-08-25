@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Counter from "./components/Counter/Counter";
-import Async from "./components/Demo/Async/Async";
 
 import Expenses from "./components/Expenses/Expenses";
 import Header from "./components/Header/Header";
-import Courses from "./pages/Courses/Courses";
 import AddPost from "./pages/Lego/AddPost/AddPost";
 import AddUser from "./pages/Lego/AddUser/AddUser";
 import ListUsers from "./pages/Lego/ListUsers/ListUsers";
@@ -24,12 +22,13 @@ function App() {
 
   return (
     <div className="container">
-      <Async />
+      {/* <Async /> */}
       <Header />
       <br />
       <Routes>
         <Route path="/" element={<Navigate to="/counter" />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/expenses" element={<Expenses />} />
         <Route path="/list-users" element={<ListUsers />} />
         <Route path="/add-user" element={<AddUser />} />
         <Route path="/user/:userId" element={<User />} />
