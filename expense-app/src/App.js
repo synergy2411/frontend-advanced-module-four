@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Counter from "./components/Counter/Counter";
+import Async from "./components/Demo/Async/Async";
 
 import Expenses from "./components/Expenses/Expenses";
 import Header from "./components/Header/Header";
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="container">
+      <Async />
       <Header />
       <br />
       <Routes>
